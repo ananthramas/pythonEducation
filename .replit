@@ -1,3 +1,3 @@
-run="python Day2/typeCasting.py"
+run="python Day3/guessNumber.py"
 language="python3"
 onBoot="echo Booting up!"
