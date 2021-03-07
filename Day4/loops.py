@@ -2,7 +2,7 @@
 
 counter = 0
 
-while counter < 5 :
+while counter < 5 :  # Exit condition
     print("Pyhon")
     counter = counter + 1
 
