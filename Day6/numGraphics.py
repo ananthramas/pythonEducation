@@ -5,8 +5,6 @@ chintu = turtle.Turtle()
 
 number = int(input("Enter number to be displayed - "));
 
-
-
 if number == 1 :
   chintu.left(90)
   chintu.forward(50)
