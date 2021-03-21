@@ -167,9 +167,9 @@ while True:
       xCor = xCor + 30
     
     chintu.up()  # while resting psotion lifft pen i.e don't draw
-    chintu.home()
+    #chintu.home() # start from intial location
     chintu.goto(xCor, yCor) # start drawing
     chintu.down()  
 
-    #chintu.left(360-chintu.heading())
+    chintu.left(360-chintu.heading())
    
