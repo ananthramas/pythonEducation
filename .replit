@@ -1,3 +1,3 @@
-run="python Day9/fillGap.py"
+run="python Day10/animation.py"
 language="python3"
 onBoot="echo Booting up!"
