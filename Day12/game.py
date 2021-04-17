@@ -15,6 +15,12 @@ wn.bgcolor("blue")
 wn.setup(width=600, height=600)
 wn.tracer(0)
 
+currentColor = 'white'
+
+downColor = 'white'
+upColor = 'yellow'
+
+
 arrow = turtle.Turtle()
 arrow.up()
 arrow.goto(-300,0)
@@ -28,7 +34,10 @@ ball.penup()
 ball.hideturtle()
 ball.goto(-290, 5)
 ball.pendown()
+ball.color('black',currentColor)
+ball.begin_fill()
 ball.circle(10)
+ball.end_fill()
 
 
 def drawSeg():
@@ -49,19 +58,32 @@ def drawSeg():
     arrow.left(90)
 
 
+def drawBall() :
+  global currentColor
+  
+  if currentColor == 'white':
+    currentColor = 'yellow'
+  elif currentColor == 'yellow' : 
+    currentColor = 'white'
+
+  ball.color('black',currentColor)
+  ball.begin_fill()
+  ball.circle(10)
+  ball.end_fill()
 
 def goup():
   global bally
-  bally  = bally + 50
+  bally  = bally + 10
   ball.clear()
   ball.penup()
   ball.goto(ballx, bally)
   ball.pendown()
   ball.circle(10)
 
+
 def godown():
   global bally
-  bally  = bally - 50
+  bally  = bally - 10
   ball.clear()
   ball.penup()
   ball.goto(ballx, bally)
@@ -69,22 +91,32 @@ def godown():
   ball.circle(10)
 
 def goleft():
-  global ballx
+  global ballx,bally
+
   ballx  = ballx - 50
+  
+  if bally < 45 :
+    bally  = bally + 50
+  
   ball.clear()
   ball.penup()
   ball.goto(ballx, bally)
   ball.pendown()
-  ball.circle(10)
+  drawBall()
 
 def goright():
-  global ballx
+  global ballx,bally
+
   ballx  = ballx + 50
+  
+  if bally < 45 :
+    bally  = bally + 50
+  
   ball.clear()
   ball.penup()
   ball.goto(ballx, bally)
   ball.pendown()
-  ball.circle(10)
+  drawBall()
 
 drawSeg()
 
